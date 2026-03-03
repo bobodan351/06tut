@@ -2,11 +2,14 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import { FaBackward } from 'react-icons/fa';
 
 
 const Dashboard = () => {
   const API_URL = `http://localhost:1234/post`; // Standard endpoint
   const [posts, setPosts] = useState([]);
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -23,7 +26,7 @@ const Dashboard = () => {
 
   return (
     <div className="App">
-      <ul>
+      <ul>  <button onClick={()=>navigate(-1)}><FaBackward/></button>
         {posts.map((item) => (
           // FIX: Key must be on the Link itself
           <li key={item.id}> 

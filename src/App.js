@@ -1,16 +1,23 @@
-import logo from './logo.svg';
+
 import './App.css';
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router';
+
+
 import { Link } from 'react-router';
-import DashboardItems from './DashboardItems';
-import Dashboard from './Dashboard';
+
 
 function App() {
 
   return (
     <div className="App">
-<Dashboard/>
+      <Link to={'/dashboard'}>
+        <h2>Post</h2>
+      </Link>
+      <Link to={'/comments'}>
+        <h2>Comments</h2>
+      </Link>
+      <Link to={'/post'}>
+        <h2>Users</h2>
+      </Link>
     </div>
   );
 }
